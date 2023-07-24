@@ -2,26 +2,22 @@ import streamlit as st
 
 st.title("Titanic Dataset")
 
-import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import cv2
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
+from matplotlib import pyplot as plt
+from sklearn.datasets import make_blobs
 
-!wget https://www.dropbox.com/s/t1eofmm9pw7j98i/titanic.csv?dl=0
+X,y = make_blobs(n_samples=500,n_features=2,centers=3,random_state=3)
 
-model= LinearRegression()
-model1=LogisticRegression()
-data=pd.read_csv("titanic.csv?dl=0")
 
-st.write("the titanic datasts")
-st.line_chart(data)
 
-st.write("the columns having nan values")
-st.line_chat(data.isna().sum())
+st.write("the random datasts")
+st.line_chart(X)
+st.line_chart(y)
+
+
+
+st.write(y.shape)
+st.write(X.shape)
 
 
 
@@ -29,3 +25,7 @@ data= data.drop( columns= (['Name','Ticket','Fare','Embarked', 'Parch', 'SibSp',
 
 st.write("after making some changes like dropping some of the not very useful rows")
 st.line_chart(data)
+
+
+plt.scatter(X[:,0], X[:, 1])
+plt.show()
