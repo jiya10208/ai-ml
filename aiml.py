@@ -11,6 +11,8 @@ from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
+!wget https://www.dropbox.com/s/t1eofmm9pw7j98i/titanic.csv?dl=0
+
 model= LinearRegression()
 model1=LogisticRegression()
 data=pd.read_csv("titanic.csv?dl=0")
